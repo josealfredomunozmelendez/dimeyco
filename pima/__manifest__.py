@@ -71,7 +71,7 @@
         "data/res_config_settings.yml",
         # Data
         'data/res_currency.xml',
-        'data/company.xml',
+        #'data/company.xml',
         'data/project_tags.xml',
         "data/hr_timesheet_invoice_data.xml",
         "data/product.xml",

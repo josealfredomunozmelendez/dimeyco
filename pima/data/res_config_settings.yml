@@ -5,7 +5,7 @@
     {
         # General Settings
         'auth_signup_uninvited': 'b2c',
-        'alias_domain': 'production.pima-mex.com',
+        #'alias_domain': 'production.pima-mex.com',
         'group_multi_company': True,
         'auth_signup_reset_password': True,
         'auth_oauth_google_enabled': True,

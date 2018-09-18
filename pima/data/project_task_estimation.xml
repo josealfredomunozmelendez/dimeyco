@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="estimation_0" model="project.task.estimation">
+        <field name="name">Not Considered</field>
+        <field name="points">0</field>
+        <field name="estimated">1</field>
+        <field name="help">Perfectly clear, feature done, just configure
+manually on bd, for example deploy something into production or enable
+manually some config feature.</field>
+    </record>
+    <record id="estimation_1_2" model="project.task.estimation">
+        <field name="name">Very Easy</field>
+        <field name="points" eval="0.5"/>
+        <field name="estimated">2</field>
+        <field name="help">Clear but I need to test the feature to be
+sure we understand the customer need (will be manually done
+on the bd frequently a saas feature)</field>
+    </record>
+    <record id="estimation_1" model="project.task.estimation">
+        <field name="name">Easy</field>
+        <field name="points">1</field>
+        <field name="estimated">4</field>
+        <field name="help">Clear and designed generally a fast new
+feature already understood when and where will be done (no unit test
+included)</field>
+    </record>
+    <record id="estimation_2" model="project.task.estimation">
+        <field name="name">Easy</field>
+        <field name="points">2</field>
+        <field name="estimated">8</field>
+        <field name="help">Clear and designed generally a fast new
+feature already understood when and where will be done including the
+unit tests</field>
+    </record>
+    <record id="estimation_3" model="project.task.estimation">
+        <field name="name">Easy</field>
+        <field name="points">3</field>
+        <field name="estimated">12</field>
+        <field name="help"></field>
+    </record>
+    <record id="estimation_5" model="project.task.estimation">
+        <field name="name">Easy to Medium</field>
+        <field name="points">5</field>
+        <field name="estimated">16</field>
+        <field name="help"></field>
+    </record>
+    <record id="estimation_8" model="project.task.estimation">
+        <field name="name">Medium</field>
+        <field name="points">8</field>
+        <field name="estimated">24</field>
+        <field name="help"></field>
+    </record>
+    <record id="estimation_13" model="project.task.estimation">
+        <field name="name">Medium to hard</field>
+        <field name="points">13</field>
+        <field name="estimated">24</field>
+        <field name="help"></field>
+    </record>
+    <record id="estimation_18" model="project.task.estimation">
+        <field name="name">Hard</field>
+        <field name="points">18</field>
+        <field name="estimated">40</field>
+        <field name="help"></field>
+    </record>
+    <record id="estimation_20" model="project.task.estimation">
+        <field name="name">Not clear enought</field>
+        <field name="points">20</field>
+        <field name="estimated">60</field>
+        <field name="help"></field>
+    </record>
+    <record id="estimation_40" model="project.task.estimation">
+        <field name="name">Epic</field>
+        <field name="points">40</field>
+        <field name="estimated">100</field>
+        <field name="help"></field>
+    </record>
+    <record id="estimation_100" model="project.task.estimation">
+        <field name="name">Epic Huge</field>
+        <field name="points">100</field>
+        <field name="estimated">200</field>
+        <field name="help"></field>
+    </record>
+    <record id="estimation_2000" model="project.task.estimation">
+        <field name="name">Infinite</field>
+        <field name="points">2000</field>
+        <field name="estimated">500</field>
+        <field name="help"></field>
+    </record>
+    <record id="estimation_5000" model="project.task.estimation">
+        <field name="name">I need explode this ¿?</field>
+        <field name="points">5000</field>
+        <field name="estimated">0</field>
+        <field name="help"></field>
+    </record>
+</odoo>

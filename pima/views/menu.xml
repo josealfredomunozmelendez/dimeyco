@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <menuitem name="Website Menus"
+                  id="menu_website_menu"
+                  parent="website.menu_website_configuration"
+                  action="website.action_website_menu"
+                  groups="website.group_website_designer"
+                  sequence='100'/>
+
+        <record id="action_invoice_rates" model="ir.actions.act_window">
+            <field name="name">Invoice Rate</field>
+            <field name="res_model">hr_timesheet_invoice.factor</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Invoice Rate"
+                  id="menu_invoice_rate"
+                  parent="account.account_account_menu"
+                  action="action_invoice_rates"
+                  sequence='100'/>
+</odoo>

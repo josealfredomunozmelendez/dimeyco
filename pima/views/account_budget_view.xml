@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="view_crossovered_budget_line_tree" model="ir.ui.view">
+            <field name="name">crossovered.budget.line.tree</field>
+            <field name="model">crossovered.budget.lines</field>
+            <field name="inherit_id" ref="account_budget.view_crossovered_budget_line_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='general_budget_id']" position="before">
+                    <field name="description"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="crossovered_budget_view_form" model="ir.ui.view">
+            <field name="name">crossovered.budget.form</field>
+            <field name="model">crossovered.budget</field>
+            <field name="inherit_id" ref="account_budget.crossovered_budget_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='creating_user_id']" position="before">
+                    <field name="use_cost"/>
+                    <field name="rate_usd"/>
+                </xpath>
+                <xpath expr="//field[@name='crossovered_budget_line']/tree/field[@name='general_budget_id']" position="before">
+                    <field name="description"/>
+                    <field name="amount_usd"/>
+                </xpath>
+                <xpath expr="//field[@name='crossovered_budget_line']/form//field[@name='general_budget_id']" position="before">
+                    <field name="description"/>
+                    <field name="amount_usd"/>
+                </xpath>
+            </field>
+        </record>
+        <!-- Case Teams Salesteams dashboard view -->
+        <record id="crossovered_budget_view_kanban" model="ir.ui.view" >
+            <field name="name">crossovered.budget.kanban</field>
+            <field name="model">crossovered.budget</field>
+            <field name="arch" type="xml">
+                <kanban class="oe_background_grey o_kanban_dashboard o_salesteam_kanban">
+                    <field name="name"/>
+                    <field name="color"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="company_id"/>
+                    <field name="use_cost"/>
+                    <field name="cost_share"/>
+                    <field name="employee_cost"/>
+                    <field name="planned_expense"/>
+                    <field name="cost_per_hour"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_global_click">
+                                <div class="o_dropdown_kanban dropdown" groups="base.group_user">
+                                    <a class="dropdown-toggle btn" data-toggle="dropdown" href="#">
+                                        <span class="fa fa-bars fa-lg"/>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                        <t t-if="widget.editable"><li><a type="set_cover">Set Cover Image</a></li></t>
+                                        <t t-if="widget.editable"><li><a type="edit">Edit Task</a></li></t>
+                                        <t t-if="widget.deletable"><li><a type="delete">Delete</a></li></t>
+                                        <li><ul class="oe_kanban_colorpicker" data-field="color"/></li>
+                                    </ul>
+                                </div>
+                                <div class="o_kanban_card_header">
+                                    <span class="pull-left text-right">
+                                        <field name="state" widget="kanban_label_selection" options="{'classes': {'draft': 'default', 'cancel': 'warning', 'confirmed': 'default', 'done': 'success'}}"/>
+                                    </span>
+                                    <div class="o_kanban_card_header_title">
+                                        <div class="col-xs-7" style="padding:0">
+                                            <div class="o_primary" style="padding:0">
+                                                <field name="name"/> |
+                                                <t t-esc="moment(record.date_from.raw_value).format('ll')"/>
+                                                <t t-esc="moment(record.date_to.raw_value).format('ll')"/>
+                                            </div>
+                                            <div style="padding:0">
+                                                <i class="fa fa-building-o"/> <b>To</b> <t t-esc="record.company_id.raw_value[1]"/>
+                                            </div>
+
+
+                                        </div>
+                                        <div t-if="record.use_cost.raw_value" class="col-xs-5" style="text-align: right; padding:0;">
+                                            <div class="col-xs-6" style="text-align: right; padding:0;">
+                                                <ul>
+                                                    <li>Cost / hour</li>
+                                                    <li>Employee Cost</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-xs-6" style="text-align: right; padding:0;">
+                                                <ul>
+                                                    <li><field name="cost_per_hour"/></li>
+                                                    <li><field name="employee_cost"/></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="container o_kanban_card_content col-xs-12">
+                                    <div class="row">
+                                        <div style="padding:15px">
+                                            <div class="col-xs-6 o_kanban_card_manage_section o_kanban_manage_view" style="padding:0">
+                                                <div class="o_kanban_card_manage_title" style="text-align: center; padding:0;">
+                                                    <span>Timesheet</span>
+                                                </div>
+                                                <div class="col-xs-6" style="text-align: right; padding:0;">
+                                                    <ul>
+                                                        <li>Theoretical</li>
+                                                        <li>Invoiceable</li>
+                                                        <li>Informed</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-xs-6" style="text-align: right; padding:0;">
+                                                    <ul>
+                                                        <li><field name="theoretical_timesheet"/></li>
+                                                        <li><field name="hours_invoice"/></li>
+                                                        <li><field name="hours_informed"/></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xs-6 o_kanban_card_manage_section o_kanban_manage_view" style="padding:0">
+                                                <div class="o_kanban_card_manage_title" style="text-align: center; padding:0;">
+                                                    <span>Budget</span>
+                                                </div>
+                                                <div class="col-xs-6" style="text-align: right; padding:0;">
+                                                    <ul>
+                                                        <li>Planned</li>
+                                                        <li>Theoretical</li>
+                                                        <li>Practical</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-xs-6" style="text-align: right; padding:0;">
+                                                    <ul>
+                                                        <li><field name="planned_amount"/></li>
+                                                        <li><field name="theoretical_amount"/></li>
+                                                        <li><field name="practical_amount"/></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xs-6 o_kanban_card_manage_section o_kanban_manage_view" style="padding:0">
+                                                <div class="o_kanban_card_manage_title" style="text-align: center; padding:0;">
+                                                    <span>Income Budget</span>
+                                                </div>
+                                                <div class="col-xs-6" style="text-align: right; padding:0;">
+                                                    <ul>
+                                                        <li>Planned</li>
+                                                        <li>Theoretical</li>
+                                                        <li>Practical</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-xs-6" style="text-align: right; padding:0;">
+                                                    <ul>
+                                                        <li><field name="planned_income"/></li>
+                                                        <li><field name="theoretical_income"/></li>
+                                                        <li><field name="practical_income"/></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xs-6 o_kanban_card_manage_section o_kanban_manage_view" style="padding:0">
+                                                <div class="o_kanban_card_manage_title" style="text-align: center; padding:0;">
+                                                    <span>Expense Budget</span>
+                                                </div>
+                                                <div class="col-xs-6" style="text-align: right; padding:0;">
+                                                    <ul>
+                                                        <li>Planned</li>
+                                                        <li>Theoretical</li>
+                                                        <li>Practical</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-xs-6" style="text-align: right; padding:0;">
+                                                    <ul>
+                                                        <li><field name="planned_expense"/></li>
+                                                        <li><field name="theoretical_expense"/></li>
+                                                        <li><field name="practical_expense"/></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div t-if="record.use_cost.raw_value" class="col-xs-12 o_kanban_card_manage_settings">
+                                    <div class="col-xs-12" style="text-align: right; padding:0;">
+                                        <field name="cost_share" widget="progress" title="Cost Share" options="{'current_value': 'planned_expense', 'max_value': 'employee_cost'}"/>
+                                    </div>
+                                </div>
+                                <div class="oe_clear"/>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="action_budget_analysis" model="ir.actions.act_window">
+            <field name="name">Cost Budget Analysis</field>
+            <field name="res_model">crossovered.budget</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+        </record>
+        <record id="budget_analysis_kanban_view" model="ir.actions.act_window.view">
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">kanban</field>
+            <field name="view_id" ref="crossovered_budget_view_kanban"/>
+            <field name="act_window_id" ref="action_budget_analysis"/>
+        </record>
+       <menuitem
+            id="menu_company_briefing"
+            name="Company Briefing"
+            parent="base.menu_board_root"
+            sequence="60"/>
+
+        <menuitem
+            action="action_budget_analysis"
+            id="menu_action_budget_analysis"
+            parent="menu_company_briefing"
+            sequence="60"/>
+</odoo>

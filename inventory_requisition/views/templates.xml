@@ -1,0 +1,70 @@
+<odoo>
+    <report
+        id="material_requistion"
+        model="stock_inventory.material_requisition"
+        string="Vale de Entrega"
+        name="inventory_requisition.material_requistion_view"
+        file="inventory_requisition.material_requistion"
+        report_type="qweb-pdf" />
+
+    <template id="material_requistion_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})" />
+                    <div class="page">
+                        <div class="row" style="padding-top:30px;">
+                            <div class="col-xs-12">
+                                <h1><span t-field="o.name"/></h1>
+                                <p>Fecha Solicitud: <span t-field="o.date" /></p>
+                                <p>Fecha Regreso: <span t-field="o.promise_return_date" /></p>
+                                <p>Requisitor: <span t-field="o.employee_id.name" /> </p>
+                                <p>Proveedor: <span t-field="o.partner_id.name" /> </p>
+                                <p>Servicio: <span t-field="o.service_name" /> </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <table class="table table-striped" >
+                                    <thead>
+                                        <th>Cant</th>
+                                        <th>Um</th>
+                                        <th>Desc</th>
+                                        <th>Peso</th>
+                                    </thead>
+                                    <tbody style="font-size: 10px;">
+                                        <t t-foreach="o.requisition_line_ids" t-as="line_id">
+                                            <tr>
+                                                <td class="col-xs-1">
+                                                    <span t-field="line_id.quantity_dispatched"/> 
+                                                </td>
+                                                <td class="col-xs-1">
+                                                    <span t-field="line_id.product_id.uom_id.name"/> 
+                                                </td>
+                                                <td class="col-xs-8">
+                                                    <span t-field="line_id.product_id.display_name"/>
+                                                    <span t-field="line_id.product_id.description_pickingout"/>
+                                                </td>
+                                                <td>
+                                                    <span t-field="line_id.total_weight"/> Kg
+                                                </td>
+                                            </tr>
+                                        </t> 
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top:50px">
+                            <div class="col-xs-6 text-center">
+                                Firma Almacenista
+                            </div>
+                            <div class="col-xs-6 text-center">
+                                Firma Proveedor
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

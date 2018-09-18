@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="project.project_task_rule_portal" model="ir.rule" forcecreate="True">
+            <field name="domain_force">[
+                    ('project_id.privacy_visibility', '=', 'portal'),
+                    ('partner_id', '=', user.partner_id.commercial_partner_id.id)]
+            </field>
+        </record>
+
+        <record id="project.project_project_rule_portal" model="ir.rule" forcecreate="True">
+            <field name="domain_force">[
+                    ('privacy_visibility', '=', 'portal'), '|',
+                    ('task_ids.partner_id', 'in', [user.partner_id.commercial_partner_id.id]),
+                    ('partner_id', '=', user.partner_id.commercial_partner_id.id)]
+            </field>
+        </record>
+
+</odoo>

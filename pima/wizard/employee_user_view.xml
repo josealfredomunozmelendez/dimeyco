@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="employee_link_user_form" model="ir.ui.view">
+        <field name="name">Link User/Assign Group</field>
+        <field name="model">employee_user.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Link User/Assign Group">
+                <group>
+                    <field name="group_id"/>
+                </group>
+                <footer>
+                    <button name="link_user" type="object"
+                            string="Link user/Assign group" class="oe_highlight"/>
+                            or
+                    <button special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <act_window id="create_employee_user_wizard"
+                name="Link User from Employee"
+                src_model="hr.employee"
+                res_model="employee_user.wizard"
+                view_mode="form" target="new"
+                key2="client_action_multi"
+                groups="project.group_project_manager"/>
+</odoo>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="helpdesk.helpdesk_team1" model="helpdesk.team">
+            <field name="name">Support</field>
+            <field name="sequence">1</field>
+            <field name="assign_method">manual</field>
+            <field name="member_ids" eval="[(6, 0, [
+                ref('base.user_root'),
+                ])]"/>
+            <field name="use_alias" eval="True"/>
+            <field name="use_website_helpdesk_form" eval="True"/>
+            <field name="use_rating" eval="True"/>
+            <field name="alias_name">support</field>
+        </record>
+
+        <record id="infraestructure_support_team" model="helpdesk.team">
+            <field name="name">Infrastructure</field>
+            <field name="sequence">2</field>
+            <field name="assign_method">manual</field>
+            <field name="use_alias" eval="True"/>
+            <field name="use_website_helpdesk_form" eval="True"/>
+            <field name="use_rating" eval="True"/>
+            <field name="alias_name">infrastructure-support</field>
+        </record>
+</odoo>

@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="project_project_form_labels" model="ir.ui.view">
+            <field name="name">project.project.form.labels</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='label_tasks']" position="after">
+                    <span>, the Acronymous is: </span>
+                    <field name="label_acronymous" class="oe_inline oe_input_align"/>
+                    <span>, Subtasks will be called: </span>
+                    <field name="label_subtasks" class="oe_inline oe_input_align"/>
+                    <span> With Acronymous: </span>
+                    <field name="label_acronymous_subtasks" class="oe_inline oe_input_align"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="act_pima_timesheet_line_by_task" model="ir.actions.act_window">
+            <field name="name">Activities</field>
+            <field name="res_model">account.analytic.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="hr_timesheet.hr_timesheet_line_tree"/>
+            <field name="domain">[('task_id', '!=', False)]</field>
+            <field name="context">{"default_task_id": active_id, "search_default_task_id": [active_id]}</field>
+            <field name="search_view_id" ref="hr_timesheet.hr_timesheet_line_search"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to record activities.
+                </p><p>
+                    You can register and track your workings hours by project every
+                    day. Every time spent on a project will become a cost and can be re-invoiced to
+                    customers if required.
+                </p>
+            </field>
+        </record>
+
+        <record id="view_sale_service_inherit_form2" model="ir.ui.view">
+            <field name="name">project.task.form.ticket</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="sale_timesheet.view_sale_service_inherit_form2"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='sale_line_id']" position="after">
+                    <field name="analytic_account_id" attrs="{'required': [('order_id', '!=', False)]}"/>
+                    <field name="order_id"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="project_task_form_ticket" model="ir.ui.view">
+            <field name="name">project.task.form.ticket</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='child_ids']" position="replace">
+                     <field name="message_needaction" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="owner_id"/>
+                    <label for="create_uid" string="Who fill this?"/>
+                    <field name="create_uid" nolabel="1" readonly="1"/>
+                </xpath>
+                <xpath expr="//field[@name='parent_id']" position="after">
+                    <field name="group_id"/>
+                    <field name="list_id"/>
+                    <field name="layer_id"/>
+                    <field name="is_layer"/>
+                </xpath>
+                <xpath expr="//page[@name='description_page']" position="after">
+                    <page name="user_story" string="User Story">
+                        <group>
+                            <group>
+                                <field name="budget" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                <field name="currency_id" invisible="1"/>
+                            </group>
+                            <group>
+                                <field name="difficulty_id" widget="radio"/>
+                            </group>
+                        </group>
+                        <newline/>
+                        <group>
+                            <field name="child_ids" nolabel="1">
+                                <tree editable="bottom">
+                                    <field name="name" string="Title"/>
+                                    <field name="description" string="Scenario"/>
+                                    <field name="accepted" readonly="1"/>
+                                    <field name="difficulty_id"/>
+                                    <button icon="fa-info" name="ask_review" string="Ask For Review by Product Owner" type="object" help="Remember, when you ask for review this Acceptance criteria you should say where and How it must be done" attrs="{'invisible': [('accepted', '=', True)]}"/>
+                                    <button icon="fa-check" name="approve" string="Approve" type="object" help="Click here if you are sure it works, it will mark this as 'ready'" attrs="{'invisible': [('accepted', '=', True)]}"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                    <page name="documentation" string="Documentation">
+                        <group>
+                            <separator colspan="4" string="Technical Conclusions" class="oe_horizontal_separator oe_clear"/>
+                                <div class="no_print">
+                                    <p class="oe_grey">
+                                        Here you need to declare technically how will be
+                                        solved this User Story. The technically conclusions
+                                        can have link to modules to be based on, link gists
+                                        or directly algorithms, link to files to change and
+                                        so on. In this place you can say where will you put
+                                        the code related to it, or documentation bnecesary
+                                        to be used to solve this case.
+                                    </p>
+                                </div>
+                            <field name="gap" colspan="4" placeholder="Add another info here ..." widget="html" nolabel="1"/>
+                            <separator colspan="4" string="Assumptions" class="oe_horizontal_separator oe_clear"/>
+                                <div class="no_print">
+                                    <p class="oe_grey">
+                                        On this place please set all the features that
+                                        explicitlly are outside (inside of the scope are the
+                                        acceptability criteria), Thisng that you considere are
+                                        part of other user story, and you will not or will
+                                        considere as part of this Story and need to be declared
+                                        explicitaly. It is important to set the scope and not
+                                        end doing things that needs to be part of other
+                                        Story or the end user is not complete agreed with it
+                                        and can be easily mixed.
+                                    </p>
+                                </div>
+                            <field name="asumption" colspan="4" placeholder="Add assumptions here ..." widget="html" nolabel="1"/>
+                            <separator colspan="4" string="Implementation Conclusions" class="oe_horizontal_separator oe_clear"/>
+                                <div class="no_print">
+                                    <p class="oe_grey">
+                                        One time you finish the story, here you need to say
+                                        considerations, learned lessons, things that you think
+                                        are important to know before implement, oportunities to
+                                        improve in the future and so on.
+                                        Some set of information can be great here are link to
+                                        manuals, videos, bugs information and some other
+                                        external things that you think are important.
+                                    </p>
+                                </div>
+                            <field name="implementation" colspan="4" placeholder="Add Implementation Conclusions here ..." widget="html" nolabel="1"/>
+                        </group>
+                    </page>
+                </xpath>
+                <xpath expr="//field[@name='parent_id']" position="attributes">
+                    <attribute name="groups">base.group_user</attribute>
+                </xpath>
+                <xpath expr="//field[@name='tag_ids']" position="after">
+                    <field name="ticket_id"/>
+                </xpath>
+                <xpath expr="//page[@name='description_page']" position="after">
+                    <page name="criteria" string="Acceptability Criteria" attrs="{'invisible':[('parent_id', '=', False)]}">
+                        <group>
+                            <group>
+                                <field name="accepted"/>
+                            </group>
+                            <group>
+                                <button icon="fa-info" name="ask_review" string="Ask For Review by Product Owner" type="object" help="Remember, when you ask for review this Acceptance criteria you should say where and How it must be d ne" attrs="{'invisible': [('accepted', '=', True)]}"/>
+                                <button icon="fa-check" name="approve" string="Approve" type="object" help="Click here if you are sure it works, it will mark this as 'ready'" attrs="{'invisible': [('accepted', '=', True)]}"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+                <xpath expr="//button[@name='toggle_active']" position="before">
+                    <button class="oe_stat_button" name="%(act_pima_timesheet_line_by_task)d" type="action" icon="fa-calendar" string="Timesheets" />
+                </xpath>
+                <xpath expr="//field[@name='name']" position="before">
+                    <field name="id"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="project_task_product_id_form" model="ir.ui.view">
+            <field name="name">project.task.product.id.form</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="hr_timesheet.view_task_form2_inherited"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='parent_id']" position="after">
+                    <field name="product_id" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='remaining_hours']" position="after">
+                    <field name="billable_hours" widget="float_time" class="oe_subtotal_footer_separator" readonly="1"/>
+                </xpath>
+                <xpath expr="//field[@name='progress']" position="after">
+                    <field name="approving_id" attrs="{'invisible': [('approving_id', '=', False)]}"/>
+                    <div class="no_print">
+                        <button name="do_approval"
+                                type="object"
+                                attrs="{'invisible':['|', ('approving_id', '!=', False), ('parent_id', '!=', False)]}"
+                                help="Please, Approve this User Story to start to work with it take care about if you are not the Owner of this User Story you will not be able to approve it."
+                                string="I approve start to work with this Story"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_task_search_form" model="ir.ui.view">
+            <field name="name">Project Task Extended Search View</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_search_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="replace">
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="difficulty_id"/>
+                    <field name="group_id"/>
+                    <field name="list_id"/>
+                    <field name="layer_id"/>
+                    <field name="is_layer"/>
+                    <field name="analytic_account_id"/>
+                </xpath>
+                <xpath expr="//group" position="inside">
+                    <filter name="color" string="Color" context="{'group_by': 'color'}"/>
+                    <filter name="difficulty_id" string="Difficulty" context="{'group_by':'difficulty_id'}"/>
+                    <filter name="group_id" string="Group" context="{'group_by':'group_id'}"/>
+                    <filter name="list_id" string="List" context="{'group_by':'list_id'}"/>
+                    <filter name="layer_id" string="Layer" context="{'group_by':'layer_id'}"/>
+                    <filter name="is_layer" string="Is Layer?" context="{'group_by':'is_layer'}"/>
+                    <filter name="analytic_account_id" string="Analytic Account" context="{'group_by':'analytic_account_id'}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="project_task_tree_view" model="ir.ui.view">
+            <field name="name">Project Task Tree View</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_tree2"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="before">
+                    <field name="id"/>
+                    <field name="product_id" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="project_task_kanban_view" model="ir.ui.view">
+            <field name="name">Project Task Kanban View</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_kanban"/>
+            <field name="arch" type="xml">
+                <templates position="before">
+                    <field name="label_subtasks"/>
+                </templates>
+                <xpath expr="//field[@name='project_id']" position="after">
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <field name="partner_id" string="Contact"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <field name="order_id" string="Order"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <field name="analytic_account_id" string="Analytic Account"/>
+                        </div>
+                    </div>
+                </xpath>
+                <xpath expr="//div[hasclass('oe_clear')]" position="after">
+                    <t t-if="record.subtask_count.raw_value">
+                        <a name="open_subtasks" type="object" class="pull-right">
+                            <field name="subtask_count"/><span> <t t-esc="record.label_subtasks.value"/></span>
+                        </a>
+                        <div class="oe_clear"/>
+                    </t>
+                </xpath>
+            </field>
+        </record>
+
+</odoo>

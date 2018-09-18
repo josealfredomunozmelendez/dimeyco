@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="product_sprint" model="product.template">
+            <field name="name">Sprint</field>
+            <field name="sale_ok" eval="1"/>
+            <field name="purchase_ok" eval="0"/>
+            <field name="type">service</field>
+            <field name="service_type">timesheet</field>
+            <field name="project_id" ref="pima.implementation_team"/>
+            <field name="list_price">5400</field>
+            <field name="standard_price">3600</field>
+            <field name="uom_id" ref="pima.product_uom_week"/>
+            <field name="uom_po_id" ref="pima.product_uom_week"/>
+            <field name="description_sale">
+        Servicio de 1 semanas contínua de trabajo de la cantidad de desarrolladores necesaria para cubrir el esfuerzo requerido de 120 Horas (Incluyendo la gestión del proyecto), enmarcado en un proceso iterativo e incremental de desarrollo de software, enfocado en la adaptabilidad y entrega rápida de software funcionando, que incluye:
+
+        - Transformar requerimientos funcionales previamente levantados (historias de usuario) en desarrollos funcionales en Odoo.
+        - Aseguramiento del ciclo de vida de desarrollo e implementación del software (`SDLC &lt;https://es.wikipedia.org/wiki/Systems_Development_Life_Cycle&gt;`_).
+        - Despliegues de funcionalidades en ambiente de pruebas.
+        - Levantamiento y especificación de nuevos requerimientos funcionales.
+        - Reporte de trabajo realizado, registro y manejo de eventualidades.
+        - El despliegue en producción se llevara a cabo en el marco de la implementación y los servicios de gestión y mantenimiento de servdores el cual es variable y a costo fijo para el mantenimiento de los servicios productivos.
+
+        Nota:
+        Este servicios se ofrece en modalidad a distancia, en caso de requerir la presencia física de nuestros consultores, los gastos de transporte, alimentación y hospedaje serán cubiertos por el cliente.
+            </field>
+        </record>
+</odoo>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="pima.apps_selected">
+        <img class="img img-tray col-lg-2 col-md-2 col-sm-2 col-xs-2"
+             t-att-src="image"/>
+        <h4 class="col-lg-10 col-md-10 col-sm-10 col-xs-10 dotted mt4">
+            <span
+                    class="app-name pull-left hx-thin"><t
+                    t-esc="name"/></span>
+            <span
+                    class="app-price pull-right"><t
+                    t-esc="price"/></span>
+            <t t-log="ctx"/>
+        </h4>
+    </t>
+</templates>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   <template id="assets_login" inherit_id="web.assets_frontend">
+      <xpath expr="." position="inside">
+         <link href="/login/static/src/css/web_login_style.css" rel="stylesheet"/>
+      </xpath>
+   </template>
+   <template id="login_layout" inherit_id="web.login_layout" name="Login Layout Inherit" priority="14">
+      <xpath expr="//t[@t-set='body_classname']" position="replace">
+         <t t-set="body_classname" t-value="''"/>
+      </xpath>
+      <xpath expr="//div[hasclass('row')]" position="attributes">
+         <attribute name="class">body_login</attribute>
+      </xpath>
+      <xpath expr="//div[hasclass('col-md-6', 'col-md-offset-3', 'o_database_list')]" position="before">
+         <div id="background-wrapper" t-attf-style="background-image: url('#{background_src}');"/>
+      </xpath>
+      <xpath expr="//div[hasclass('col-md-6', 'col-md-offset-3', 'o_database_list')]" position="attributes">
+         <attribute name="class">col-lg-4 col-md-6 col-sm-6 col-xs-11 o_database_list</attribute>
+      </xpath>
+      <xpath expr="//div[hasclass('text-center')]/img" position="replace">
+         <a href="/">
+            <img class="company_logo" t-attf-src="/web/binary/company_logo{{ '?dbname='+db if db else '' }}"/>
+         </a>
+      </xpath>
+      <xpath expr="//div[hasclass('text-center')][2]" position="attributes">
+         <attribute name="class">text-center col-md-12 col-xs-12 mt8</attribute>
+      </xpath>
+   </template>
+   <template id="social_buttons" name="Social Buttons">
+      <div class="col-md-12 col-xs-12">
+         <div t-foreach="providers" t-as="p" t-att-class="'col-md-12 col-lg-{0} col-xs-12 col-sm-12 div_providers'.format(int(12 / len(providers)))">
+             <a t-att-href="p['auth_link']" class="btn btn-primary oauth_btn">
+                 <i t-att-class="p['css_class']"/>
+                 <t t-esc="p['body']"/>
+             </a>
+         </div>
+      </div>
+   </template>
+   <template id="login" inherit_id="web.login" name="Login Inherit">
+      <xpath expr="//label[@for='db']" position="replace"/>
+      <xpath expr="//label[@for='login']" position="replace"/>
+      <xpath expr="//label[@for='password']" position="replace"/>
+      <xpath expr="//input[@name='login']" position="attributes">
+         <attribute name="placeholder">Email...</attribute>
+         <attribute name="autocomplete">off</attribute>
+         <attribute name="autocorrect">off</attribute>
+      </xpath>
+      <xpath expr="//input[@name='password']" position="attributes">
+         <attribute name="placeholder">Password...</attribute>
+      </xpath>
+      <xpath expr="//span[hasclass('input-group-btn')]/a[@href='/web/database/selector']" position="replace">
+         <a class="btn btn-default btn-select" href="/web/database/selector">
+            <i class="fa fa-database"/>
+         </a>
+      </xpath>
+      <xpath expr="//form" position="after">
+         <div class="col-sm-12 col-xs-12 links-paragraph">
+            <p class="text-center">
+               <t t-if="signup_enabled">
+                  <span class="text-muted">Did you </span>
+                  <a t-attf-href="/web/reset_password?{{ keep_query() }}">Forgot your Password?</a>
+               </t>
+               <t t-if="signup_enabled">
+                  <span class="text-muted">or try to </span>
+                  <a t-attf-href="/web/signup?{{ keep_query() }}">Create an account</a>
+               </t>
+            </p>
+         </div>
+         <t t-call="login.social_buttons"/>
+      </xpath>
+      <xpath expr="//form" position="attributes">
+         <attribute name="class">oe_login_form mt16</attribute>
+      </xpath>
+   </template>
+   <!-- DISABLE CLASSIC Reset Password AND Sign UP BUTTONS -->
+   <template id="auth_signup_login" inherit_id="auth_signup.login" name="Sign Up Login">
+      <xpath expr="//a[@t-if='signup_enabled']" position="replace">
+      </xpath>
+      <xpath expr="//a[@t-if='reset_password_enabled']" position="replace">
+      </xpath>
+   </template>
+   <template id="auth_oauth_login" inherit_id="auth_oauth.login" name="Disable Inline Oauth Login">
+      <xpath expr="//div[hasclass('pull-right')]" position="replace">
+      </xpath>
+   </template>
+   <template id="auth_oauth_reset_password" inherit_id="auth_oauth.reset_password" name="Disable Oauth Buttons Password">
+      <xpath expr="//div[hasclass('pull-right')]" position="replace">
+      </xpath>
+   </template>
+
+   <template id="auth_oauth_signup" inherit_id="auth_oauth.signup" name="Disable Oauth Buttons Signup">
+      <xpath expr="//div[hasclass('pull-right')]" position="replace">
+      </xpath>
+   </template>
+   <template id="signup" inherit_id="auth_signup.signup" name="Signup">
+      <xpath expr="//div[hasclass('clearfix', 'oe_login_buttons')]" position="after">
+         <div class="col-md-12 col-xs-12 text-center">
+            <p>Or register using:</p>
+         </div>
+         <t t-call="login.social_buttons"/>
+      </xpath>
+   </template>
+</odoo>

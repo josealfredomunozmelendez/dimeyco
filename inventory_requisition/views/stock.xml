@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="stock_picking_form_inherithed">
+        <field name="name">stock.picking.form</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='location_dest_id']" position="after">
+                <field name="employee_id"/>
+                <field name="account_analytic_id"/>
+                <field name="analytic_tag_ids"  widget="many2many_tags"/>
+            </xpath>
+            <xpath expr="//button[@name='button_validate']" position="replace">
+                <button name="button_validate" attrs="{'invisible': [('show_validate', '=', False)]}" string="Validate" groups="stock.group_stock_manager" type="object" class="oe_highlight"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

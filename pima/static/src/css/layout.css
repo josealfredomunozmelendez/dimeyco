@@ -1,0 +1,17 @@
+.pima .img-responsive {
+    margin: 0 auto;
+}
+
+.pima .header {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    border-bottom:  1px solid #ccc;
+}
+
+tfoot {
+    font-weight: bold;
+}
+
+.no-brake tfoot {
+    display: table-row-group
+}

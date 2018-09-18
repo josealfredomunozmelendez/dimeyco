@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+llacox_inventory_requisition_admin,Inventory Requisition Manager,model_stock_inventory_requisition,,1,1,1,1
+llacox_inventory_requisition_user,Inventory Requisition User,model_stock_inventory_requisition,,0,1,1,0

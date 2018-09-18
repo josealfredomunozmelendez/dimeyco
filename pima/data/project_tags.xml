@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="tag_helpdesk_ticket" model="project.tags">
+            <field name="name">Helpdesk Ticket</field>
+            <field name="color">7</field>
+        </record>
+
+        <record id="tag_license_enterprise" model="project.tags">
+            <field name="name">Enterprise License</field>
+            <field name="color">7</field>
+        </record>
+
+        <record id="tag_support_l1" model="project.tags">
+            <field name="name">Support L1</field>
+            <field name="color">7</field>
+        </record>
+
+        <record id="tag_support_l2" model="project.tags">
+            <field name="name">Support L2</field>
+            <field name="color">7</field>
+        </record>
+</odoo>

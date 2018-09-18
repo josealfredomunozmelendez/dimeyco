@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="training_team" model="project.project">
+            <field name="name">Training</field>
+            <field name="sequence">2</field>
+            <field name="label_tasks">Projects</field>
+            <field name="privacy_visibility">employees</field>
+            <field name="rating_status">no</field>
+            <field name="allow_timesheets" eval="True"/>
+            <field name="allow_forecast" eval="True"/>
+            <field name="alias_name" eval="False"/>
+        </record>
+
+        <record id="internal_management_team" model="project.project">
+            <field name="name">Internal Management</field>
+            <field name="sequence">3</field>
+            <field name="label_tasks">Projects</field>
+            <field name="privacy_visibility">followers</field>
+            <field name="rating_status">no</field>
+            <field name="allow_timesheets" eval="True"/>
+            <field name="alias_name" eval="False"/>
+        </record>
+
+        <record id="i_d_team" model="project.project">
+            <field name="name">I+D</field>
+            <field name="sequence">4</field>
+            <field name="label_tasks">Projects</field>
+            <field name="privacy_visibility">employees</field>
+            <field name="rating_status">no</field>
+            <field name="allow_timesheets" eval="True"/>
+        </record>
+
+        <record id="consulting_team" model="project.project">
+            <field name="name">Consulting</field>
+            <field name="sequence">5</field>
+            <field name="label_tasks">Courses</field>
+            <field name="privacy_visibility">employees</field>
+            <field name="rating_status">stage</field>
+            <field name="allow_timesheets" eval="True"/>
+            <field name="alias_name" eval="False"/>
+        </record>
+
+        <record id="support_team" model="project.project">
+            <field name="name">Support</field>
+            <field name="sequence">6</field>
+            <field name="label_tasks">Tickets</field>
+            <field name="privacy_visibility">employees</field>
+            <field name="rating_status">stage</field>
+            <field name="allow_timesheets" eval="True"/>
+            <field name="allow_forecast" eval="True"/>
+            <field name="alias_name" eval="False"/>
+        </record>
+</odoo>

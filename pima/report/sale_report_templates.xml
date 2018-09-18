@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id='report_saleorder_document' inherit_id="sale.report_saleorder_document">
+        <xpath expr="//p[@t-field='doc.note']" position="replace">
+        </xpath>
+        <xpath expr="//span[@t-field='l.name']" position="replace">
+            <div class="container" t-raw="l.desc2html"/>
+        </xpath>
+        <xpath expr="//p[@id='fiscal_position_remark']" position="after">
+            <div class="row" t-if="doc.note" style="page-break-before: always;">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr><th class="active"><h1 class="text-center">Terms and Conditions</h1></th></tr>
+                    </thead>
+                    <tbody class="sale_tbody">
+<!--https://github.com/odoo/odoo/issues/7375-->
+                        <style>
+.document ul.simple {list-style-type: circle;}
+.document ol.simple .arabic {list-style-type: decimal;}
+.document ol.simple .loweralpha {list-style-type: lower-alpha;}
+.document .simple li {margin-left: 20px;}
+.document .simple {margin-left: 20px;}
+.document {text-align: justify;}
+                        </style>
+                        <tr><td><div t-raw="doc.note2html"/></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </xpath>
+    </template>
+</odoo>

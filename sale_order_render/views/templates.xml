@@ -1,0 +1,34 @@
+<odoo>
+    <data>
+        <template id="quotation_report_attachments" inherit_id="sale.report_saleorder_document">
+            <xpath expr="//div[@class='clearfix']" position="after">
+                <h2>Diseño - Render</h2>
+                <t t-foreach="doc.render_ids" t-as="i">
+                    <div><span t-field="i.datas" class="s_big_picture o_bg_img_opt_contain mt0 oe_img_bg oe_custom_bg" t-field-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;img-responsive&quot;}"/></div>
+                </t>
+            </xpath>
+        </template>
+
+        <template id="so_quotation_content_attachments" inherit_id="website_quote.so_quotation_content" name="Quotation Content Attachments">
+            <xpath expr="//div[@t-field='quotation.website_description']" position="after">
+                <div class="col-md-12">
+                    <h1 class="text-center" id="quote_header_7"><font class="text-alpha" style=""><b>Diseño - Render</b></font></h1>
+                    <t t-foreach="quotation.render_ids" t-as="i">
+                        <div><span t-field="i.datas" class="s_big_picture o_bg_img_opt_contain mt0 oe_img_bg oe_custom_bg" t-field-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;img-responsive&quot;}"/></div>
+                    </t>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="so_quotation_content_attachments" inherit_id="website_quote.so_quotation_content" name="Quotation Content Attachments">
+            <xpath expr="//div[@t-field='quotation.website_description']" position="after">
+                <div class="col-md-12">
+                    <h1 class="text-center" id="quote_header_7"><font class="text-alpha" style=""><b>Diseño - Render</b></font></h1>
+                    <t t-foreach="quotation.render_ids" t-as="i">
+                        <div><span t-field="i.datas" class="s_big_picture o_bg_img_opt_contain mt0 oe_img_bg oe_custom_bg" t-field-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;img-responsive&quot;}"/></div>
+                    </t>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>

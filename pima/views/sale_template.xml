@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="general_description_portal_order_page" inherit_id="sale.portal_order_page">
+            <xpath expr='//t[@t-as="ol"]' position="replace">
+                <t t-if="order._name == 'sale.order' and order.general_descripion and order.project_product_id">
+                    <div class="row orders_vertical_align">
+                        <div class="visible-lg col-lg-1 text-center">
+                          <span/>
+                        </div>
+                        <div id='product_name' class="col-lg-4 col-sm-6 col-xs-3">
+                          <span t-esc="order.project_description"/>
+                        </div>
+                      <div class="col-xs-3 text-right">
+                        <span t-field="order.amount_untaxed" t-options='{"widget": "monetary", "display_currency": order.pricelist_id.currency_id}'/>
+                      </div>
+                      <div class="col-xs-2 text-right">
+                          <span>1</span>
+                      </div>
+                      <div class="col-sm-2 col-xs-4 text-right">
+                        <span t-field="order.amount_untaxed" t-options='{"widget": "monetary", "display_currency": order.pricelist_id.currency_id}'/>
+                      </div>
+                    </div>
+                    <t t-set="order.order_line" t-value="False"/>
+                </t>
+                <t t-if="order._name == 'sale.order' and not order.general_descripion or not order.project_product_id or order._name != 'sale.order'">
+                      <t t-foreach="order.order_line" t-as="ol">
+                        <div class="row orders_vertical_align">
+                            <div class="visible-lg col-lg-1 text-center">
+                              <span t-field="ol.product_image" t-options="{'widget': 'image', 'class': 'img-rounded', 'style':'width: 48px;height:48px'}" />
+                            </div>
+                            <div id='product_name' class="col-lg-4 col-sm-6 col-xs-3">
+                              <span t-esc="ol.product_id.name"/>
+                            </div>
+                          <div class="col-xs-3 text-right">
+                            <span t-field="ol.price_unit" t-options='{"widget": "monetary", "display_currency": order.pricelist_id.currency_id}'/>
+                          </div>
+                          <div class="col-xs-2 text-right">
+                            <t t-if="ol._name == 'sale.order.line'">
+                              <span t-esc="ol.product_uom_qty"/>
+                            </t>
+                            <t t-if="ol._name == 'account.invoice.line'">
+                              <span t-esc="ol.quantity"/>
+                            </t>
+                          </div>
+                          <div class="col-sm-2 col-xs-4 text-right">
+                            <span t-field="ol.price_subtotal" t-options='{"widget": "monetary", "display_currency": order.pricelist_id.currency_id}'/>
+                          </div>
+                        </div>
+                      </t>
+                </t>
+            </xpath>
+    </template>
+    <template id="report_general_description" inherit_id="sale.report_saleorder_document">
+            <xpath expr='//t[@t-as="l"]' position="before">
+                <t t-if="doc.project_product_id and doc.general_descripion">
+                    <tr>
+                        <td><span t-field="doc.project_description"/></td>
+                        <td class="text-right">
+                            <span>1</span>
+                            <span t-field="doc.project_product_id.uom_id" groups="product.group_uom"/>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="doc.amount_untaxed"/>
+                        </td>
+                        <td t-if="display_discount" class="text-right" groups="sale.group_discount_per_so_line">
+                            <span>  </span>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="doc.amount_tax" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/>
+                        </td>
+                        <td class="text-right" groups="sale.group_show_price_subtotal">
+                            <span t-field="doc.amount_untaxed" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/>
+                        </td>
+                        <td class="text-right" groups="sale.group_show_price_total">
+                            <span t-field="doc.amount_total" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/>
+                        </td>
+                    </tr>
+                    <t t-set="layout_category" t-value="{'lines':[], 'subtotal': 0, 'name': '', 'pagebreak': 0}"/>
+                </t>
+            </xpath>
+    </template>
+
+    <template id="general_description_pricing" inherit_id="website_quote.pricing">
+            <xpath expr='//t[@t-as="line"]' position="before">
+                <t t-if="quotation.project_product_id and quotation.general_descripion">
+                    <tr>
+                      <td>
+                          <span t-field="quotation.project_description"/>
+                      </td>
+                      <td>
+                          <div id="quote_qty">
+                              <span>1</span>
+                              <span t-field="quotation.project_product_id.uom_id"/>
+                          </div>
+                      </td>
+                      <td>
+                          <div t-foreach="quotation.order_line.mapped('tax_id')" t-as="tax">
+                              <t t-esc="tax.name"/>
+                          </div>
+                      </td>
+                      <td>
+                      </td>
+                      <td class="text-right">
+                            <div t-field="quotation.amount_untaxed"
+                                t-options='{"widget": "monetary", "display_currency": quotation.pricelist_id.currency_id}'
+                                class="text-right"/>
+                      </td>
+                      <td class="text-right" groups="sale.group_show_price_subtotal">
+                          <span t-field="quotation.amount_untaxed"
+                                t-options='{"widget": "monetary", "display_currency": quotation.pricelist_id.currency_id}'/>
+                      </td>
+                      <td class="text-right" groups="sale.group_show_price_total">
+                          <span t-field="quotation.amount_total"
+                                t-options='{"widget": "monetary", "display_currency": quotation.pricelist_id.currency_id}'/>
+                      </td>
+                      <td class="text-center">
+                      </td>
+                     </tr>
+                    <t t-set="layout_category" t-value="{'lines':[], 'subtotal': 0, 'name': '', 'pagebreak': 0}"/>
+                </t>
+            </xpath>
+    </template>
+</odoo>

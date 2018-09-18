@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_order_form">
+        <field name="name">sale.order.note2html.form</field>
+        <field name="model">sale.order</field>
+        <field name="priority">10</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="general_descripion"/>
+            </xpath>
+            <xpath expr="//page/field[@name='order_line']/.." position="after">
+                <page string="Project Description" attrs="{'invisible': [('general_descripion', '=', False)]}">
+                    <group>
+                        <group>
+                            <field name="project_product_id" attrs="{'required': [('general_descripion', '=', True)]}"/>
+                            <field name="project_description" attrs="{'required': [('general_descripion', '=', True)]}"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,1281 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* pima
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-26 23:39+0000\n"
+"PO-Revision-Date: 2018-03-26 18:14-0600\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+
+#. module: pima
+#: model:hr_timesheet_invoice.factor,name:pima.timesheet_invoice_factor6
+msgid "33%"
+msgstr "33%"
+
+#. module: pima
+#: model:hr_timesheet_invoice.factor,name:pima.timesheet_invoice_factor3
+msgid "50%"
+msgstr "50%"
+
+#. module: pima
+#: model:hr_timesheet_invoice.factor,name:pima.timesheet_invoice_factor4
+msgid "80%"
+msgstr "80%"
+
+#. module: pima
+#: model:hr_timesheet_invoice.factor,name:pima.timesheet_invoice_factor5
+msgid "85%"
+msgstr "85%"
+
+#. module: pima
+#: model:hr_timesheet_invoice.factor,name:pima.timesheet_invoice_factor2
+msgid "90%"
+msgstr "90%"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.crossovered_budget_view_kanban
+msgid "<i class=\"fa fa-building-o\"/> <b>To</b>"
+msgstr "<i class=\"fa fa-building-o\"/> <b>To</b>"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.project_project_form_labels
+msgid "<span> With Acronymous: </span>"
+msgstr "<span> Con Acrónimo: </span>"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.project_project_form_labels
+msgid "<span>, Subtasks will be called: </span>"
+msgstr "<span>, Subtasks will be called: </span>"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.project_project_form_labels
+msgid "<span>, the Acronymous is: </span>"
+msgstr "<span>, the Acronymous is: </span>"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.crossovered_budget_view_kanban
+msgid "<span>Budget</span>"
+msgstr "<span>Budget</span>"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.crossovered_budget_view_kanban
+msgid "<span>Expense Budget</span>"
+msgstr "<span>Expense Budget</span>"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.crossovered_budget_view_kanban
+msgid "<span>Income Budget</span>"
+msgstr "<span>Income Budget</span>"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.crossovered_budget_view_kanban
+msgid "<span>Timesheet</span>"
+msgstr "<span>Timesheet</span>"
+
+#. module: pima
+#: sql_constraint:crossovered.budget:0
+msgid "A negative or zero rate does not make sense please try a proper value."
+msgstr "Una tasa negativa o cero no tiene sentido por favor intente con un valor adecuado."
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.project_task_form_ticket
+msgid "Acceptability Criteria"
+msgstr "Criterios de Aceptación "
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_project_task_accepted
+msgid "Accepted"
+msgstr "Aceptado"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_project_project_label_subtasks
+#: model:ir.model.fields,help:pima.field_project_task_label_subtasks
+msgid "Acronymous to show as prefix in the display name for the tasks with parent Tasks"
+msgstr "Acrónimo para mostrar como prefijo en el nombre para mostrar para las tareas con Tareas principales"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_project_project_label_acronymous
+msgid "Acronymous to show as prefix in the display name for the tasks without parent Tasks"
+msgstr "Acrónimo para mostrar como prefijo en el nombre para mostrar para las tareas sin tareas principales"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_project_project_label_acronymous_subtasks
+msgid "Acronyms to show as prefix in the display name for the tasks with parent Tasks"
+msgstr "Acrónimos para mostrar como prefijo en el nombre para mostrar para las tareas con tareas principales"
+
+#. module: pima
+#: model:ir.actions.act_window,name:pima.act_pima_timesheet_line_by_task
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.project_task_form_ticket
+msgid "Add Implementation Conclusions here ..."
+msgstr "Agregue conclusiones de implementación aquí ..."
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.project_task_form_ticket
+msgid "Add another info here ..."
+msgstr "Agrega otra información aquí ..."
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.project_task_form_ticket
+msgid "Add assumptions here ..."
+msgstr "Agrega suposiciones aquí ..."
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_crm_team_address_id
+msgid "Address to show in the Header of the sale Order"
+msgstr "Dirección para mostrar en el encabezado de la orden de venta"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_res_company_website_address_ids
+msgid "All contact public Contactsto be shown in contact form."
+msgstr "Todos los contactos públicos  Para mostrarse en el formulario de contacto."
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_hr_timesheet_reports_base_prod_ent_ids
+msgid "All lines on invoices that have this product will be ignored as Effectivally Invoiced time already invoiced"
+msgstr "Todas las líneas en las facturas que tienen este producto serán ignoradas como el tiempo facturado efectivamente ya facturado"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_hr_timesheet_reports_base_prod_train_ids
+msgid "All lines that have this products will Be ignored due to this is just for products"
+msgstr "Todas las líneas que tienen estos productos serán ignoradas debido a que esto es solo para productos"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_hr_timesheet_reports_base_prod_cons_ids
+msgid "All products here will be considered as consultancythen it will be compared by currency and by considering the product in this reports to use the unit_price and the currency"
+msgstr "Todos los productos aquí serán considerados como consultoría, luego se compararán por moneda y considerando el producto en estos informes para usar el precio unitario y la moneda."
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_crossovered_budget_lines_amount_usd
+msgid "Amount Usd"
+msgstr "Monto en USD"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_crossovered_budget_lines_amount_usd
+msgid "Amount in usd, this will always be used to analyze with the employees behavior (TODO: make it configurable) "
+msgstr "Monto en usd, esto siempre se usará para analizar con el comportamiento de los empleados (TODO: hacer que sea configurable)"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_crossovered_budget_employee_cost
+msgid "Amount of Employee Costs in the company."
+msgstr "Cantidad de costos del empleado en la empresa."
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_crossovered_budget_theoretical_expense
+msgid "Amount of expense expected in this budget."
+msgstr "Cantidad de gasto esperada en este presupuesto."
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_crossovered_budget_planned_expense
+#: model:ir.model.fields,help:pima.field_crossovered_budget_practical_expense
+msgid "Amount of expense spent in this budget."
+msgstr "Amount of expense spent in this budget."
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_crossovered_budget_planned_income
+msgid "Amount of income earned in this budget."
+msgstr "Amount of income earned in this budget."
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_crossovered_budget_practical_income
+msgid "Amount of income executed in this budget."
+msgstr "Amount of income executed in this budget."
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_crossovered_budget_theoretical_income
+msgid "Amount of income expected in this budget."
+msgstr "Amount of income expected in this budget."
+
+#. module: pima
+#: model:ir.model,name:pima.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Línea analítica"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.project_task_form_ticket
+msgid "Approve"
+msgstr "Aprobar"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_project_task_approving_id
+msgid "Approving"
+msgstr "Approving"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.project_task_form_ticket
+msgid "Ask For Review by Product Owner"
+msgstr "Ask For Review by Product Owner"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.project_task_form_ticket
+msgid "Assumptions"
+msgstr "Assumptions"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_project_task_asumption
+msgid "Asumption"
+msgstr "Asumption"
+
+#. module: pima
+#: model:ir.model,name:pima.model_project_task_estimation
+msgid ""
+"Based on scrum cards values for estimation but used for\n"
+"user stories estimations"
+msgstr ""
+"Based on scrum cards values for estimation but used for\n"
+"user stories estimations"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_project_task_billable_hours
+msgid "Billable Hours"
+msgstr "Billable Hours"
+
+#. module: pima
+#: model:ir.model,name:pima.model_crossovered_budget
+#: model:ir.model.fields,field_description:pima.field_project_task_budget
+msgid "Budget"
+msgstr "Presupuesto"
+
+#. module: pima
+#: model:ir.model,name:pima.model_crossovered_budget_lines
+msgid "Budget Line"
+msgstr "Línea de Presupuesto"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.employee_link_user_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_project_task_accepted
+msgid "Check if this criterion apply"
+msgstr "Check if this criterion apply"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_sale_order_general_descripion
+msgid "Check if you want to show(On reports and web views) a general description for this order and not its details(All Sale Order Lines). It's required set a Project product in the Page Project Description"
+msgstr "Selecciona si tu quieres mostrar(En reportes y vistas web) una descripción general para esta orden y no sus detalles(Todas sus líneas). Es requerido establecer un Producto general en la pestaña Descripción del Proyecto"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.project_task_form_ticket
+msgid "Click here if you are sure it works, it will mark this as 'ready'"
+msgstr "Click here if you are sure it works, it will mark this as 'ready'"
+
+#. module: pima
+#: model:ir.actions.act_window,help:pima.act_pima_timesheet_line_by_task
+msgid "Click to record activities."
+msgstr "Haga clic para registrar las actividades."
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_crossovered_budget_color
+#: model:ir.model.fields,help:pima.field_crossovered_budget_color
+#: model:ir.ui.view,arch_db:pima.view_task_search_form
+msgid "Color"
+msgstr "Color"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_reports_base_comment_invoices
+msgid "Comment about Invoices"
+msgstr "Comment about Invoices"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_reports_base_comment_issues
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_reports_base_comment_timesheet
+msgid "Comment about Timesheets"
+msgstr "Comment about Timesheets"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_reports_base_ci2html
+msgid "Comments Invoices html"
+msgstr "Comments Invoices html"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_reports_base_ciss2html
+msgid "Comments Issues html"
+msgstr "Comments Issues html"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_reports_base_cts2html
+msgid "Comments TS html"
+msgstr "Comments TS html"
+
+#. module: pima
+#: model:ir.model,name:pima.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_reports_base_company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: pima
+#: model:ir.ui.menu,name:pima.menu_company_briefing
+msgid "Company Briefing"
+msgstr "Company Briefing"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_hr_timesheet_reports_base_company_id
+msgid "Company which this report belongs to"
+msgstr "Company which this report belongs to"
+
+#. module: pima
+#: model:ir.model,name:pima.model_res_partner
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_reports_base_partner_id
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_hr_timesheet_reports_base_partner_id
+msgid "Contact which you will send this report."
+msgstr "Contacto al que se enviará este reporte."
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_sale_order_line_desc2html
+#: model:ir.model.fields,field_description:pima.field_sale_order_note2html
+msgid "Converted RST"
+msgstr "Converted RST"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.crossovered_budget_view_kanban
+msgid "Cost / hour"
+msgstr "Cost / hour"
+
+#. module: pima
+#: model:ir.actions.act_window,name:pima.action_budget_analysis
+#: model:ir.ui.menu,name:pima.menu_action_budget_analysis
+msgid "Cost Budget Analysis"
+msgstr "Cost Budget Analysis"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_crossovered_budget_cost_per_hour
+msgid "Cost Per Hour"
+msgstr "Cost Per Hour"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_crossovered_budget_cost_share
+#: model:ir.ui.view,arch_db:pima.crossovered_budget_view_kanban
+msgid "Cost Share"
+msgstr "Cost Share"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_crossovered_budget_cost_per_hour
+msgid "Cost of Employee per hour."
+msgstr "Cost of Employee per hour."
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_employee_user_wizard_create_uid
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_invoice_factor_create_uid
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_reports_base_create_uid
+#: model:ir.model.fields,field_description:pima.field_project_task_estimation_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_employee_user_wizard_create_date
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_invoice_factor_create_date
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_reports_base_create_date
+#: model:ir.model.fields,field_description:pima.field_project_task_estimation_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_reports_base_currency_id
+#: model:ir.model.fields,field_description:pima.field_project_task_currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_project_task_currency_id
+msgid "Currency which the budget was planned on (default usd)"
+msgstr "Currency which the budget was planned on (default usd)"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.crossovered_budget_view_kanban
+msgid "Delete"
+msgstr "Suprimir"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_crossovered_budget_lines_description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_sale_order_project_description
+msgid "Description to be show in reports and invoice to describe the project"
+msgstr "Descripción a ser mostrada en reportes y facturas, para describir el proyecto"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_project_task_difficulty_id
+#: model:ir.ui.view,arch_db:pima.view_task_search_form
+msgid "Difficulty"
+msgstr "Difficulty"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_invoice_factor_factor
+msgid "Discount (%)"
+msgstr "Descuento (%)"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_hr_timesheet_invoice_factor_factor
+msgid "Discount in percentage"
+msgstr "Discount in percentage"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_employee_user_wizard_display_name
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_invoice_factor_display_name
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_reports_base_display_name
+#: model:ir.model.fields,field_description:pima.field_project_task_estimation_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.project_task_form_ticket
+msgid "Documentation"
+msgstr "Documentation"
+
+#. module: pima
+#: selection:hr.timesheet.reports.base,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: pima
+#: model:project.task.estimation,name:pima.estimation_1
+#: model:project.task.estimation,name:pima.estimation_2
+#: model:project.task.estimation,name:pima.estimation_3
+msgid "Easy"
+msgstr "Easy"
+
+#. module: pima
+#: model:project.task.estimation,name:pima.estimation_5
+msgid "Easy to Medium"
+msgstr "Easy to Medium"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.crossovered_budget_view_kanban
+msgid "Edit Task"
+msgstr "Editar Tarea"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_crossovered_budget_employee_cost
+#: model:ir.ui.view,arch_db:pima.crossovered_budget_view_kanban
+msgid "Employee Cost"
+msgstr "Employee Cost"
+
+#. module: pima
+#: model:project.task.estimation,name:pima.estimation_40
+msgid "Epic"
+msgstr "Epic"
+
+#. module: pima
+#: model:project.task.estimation,name:pima.estimation_100
+msgid "Epic Huge"
+msgstr "Epic Huge"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_project_task_estimation_estimated
+msgid "Estimated"
+msgstr "Estimated"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_project_task_budget
+msgid "Estimated budget in dollars"
+msgstr "Estimated budget in dollars"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_project_task_estimation_help
+msgid "Explain what kind of User Stories can be on this level, tell your experience give examples and so on."
+msgstr "Explain what kind of User Stories can be on this level, tell your experience give examples and so on."
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_reports_base_filter_id
+msgid "Filter"
+msgstr "Filtro"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_hr_timesheet_reports_base_filter_invoice_id
+msgid "Filter of Invoices to be shown TIP = Go to Accounting/Customer Invoices in order to create the filter you want to show on thisreport."
+msgstr "Filter of Invoices to be shown TIP = Go to Accounting/Customer Invoices in order to create the filter you want to show on thisreport."
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_hr_timesheet_reports_base_filter_id
+msgid "Filter should be by date, group_by is ignored, the model which the filter should belong to is timesheet."
+msgstr "Filter should be by date, group_by is ignored, the model which the filter should belong to is timesheet."
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_project_task_gap
+msgid "Gap"
+msgstr "Gap"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_sale_order_general_descripion
+msgid "General Descripion"
+msgstr "Descripción General"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_project_task_group_id
+#: model:ir.ui.view,arch_db:pima.view_task_search_form
+msgid "Group"
+msgstr "Grupo"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_employee_user_wizard_group_id
+msgid "Group to assign"
+msgstr "Group to assign"
+
+#. module: pima
+#: model:project.task.estimation,name:pima.estimation_18
+msgid "Hard"
+msgstr "Hard"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_project_task_estimation_help
+msgid "Help"
+msgstr "Ayuda"
+
+#. module: pima
+#: model:ir.model,name:pima.model_helpdesk_team
+msgid "Helpdesk Team"
+msgstr "Equipo de la mesa de ayuda"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.project_task_form_ticket
+msgid ""
+"Here you need to declare technically how will be\n"
+"                                        solved this User Story. The technically conclusions\n"
+"                                        can have link to modules to be based on, link gists\n"
+"                                        or directly algorithms, link to files to change and\n"
+"                                        so on. In this place you can say where will you put\n"
+"                                        the code related to it, or documentation bnecesary\n"
+"                                        to be used to solve this case."
+msgstr ""
+"Here you need to declare technically how will be\n"
+"                                        solved this User Story. The technically conclusions\n"
+"                                        can have link to modules to be based on, link gists\n"
+"                                        or directly algorithms, link to files to change and\n"
+"                                        so on. In this place you can say where will you put\n"
+"                                        the code related to it, or documentation bnecesary\n"
+"                                        to be used to solve this case."
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_crossovered_budget_hours_informed
+msgid "Hours Informed"
+msgstr "Hours Informed"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_crossovered_budget_hours_invoice
+msgid "Hours Invoice"
+msgstr "Hours Invoice"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_project_task_difficulty_id
+msgid "How difficult/clear is this "
+msgstr "How difficult/clear is this "
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_project_task_estimation_estimated
+msgid "How many hour do you think it can take?"
+msgstr "How many hour do you think it can take?"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.project_task_product_id_form
+msgid "I approve start to work with this Story"
+msgstr "I approve start to work with this Story"
+
+#. module: pima
+#: model:project.task.estimation,name:pima.estimation_5000
+msgid "I need explode this ¿?"
+msgstr "I need explode this ¿?"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_employee_user_wizard_id
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_invoice_factor_id
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_reports_base_id
+#: model:ir.model.fields,field_description:pima.field_project_task_estimation_id
+msgid "ID"
+msgstr "ID (identificación)"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_project_task_implementation
+msgid "Implementation"
+msgstr "Implementación"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.project_task_form_ticket
+msgid "Implementation Conclusions"
+msgstr "Implementation Conclusions"
+
+#. module: pima
+#: model:project.task.estimation,name:pima.estimation_2000
+msgid "Infinite"
+msgstr "Infinite"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.crossovered_budget_view_kanban
+msgid "Informed"
+msgstr "Informed"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_invoice_factor_name
+msgid "Internal Name"
+msgstr "Internal Name"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_account_analytic_line_invoice_id
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: pima
+#: model:ir.actions.act_window,name:pima.action_invoice_rates
+#: model:ir.model,name:pima.model_hr_timesheet_invoice_factor
+#: model:ir.ui.menu,name:pima.menu_invoice_rate
+msgid "Invoice Rate"
+msgstr "Invoice Rate"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_account_analytic_line_to_invoice
+#: model:ir.ui.view,arch_db:pima.crossovered_budget_view_kanban
+msgid "Invoiceable"
+msgstr "Invoiceable"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_account_analytic_line_invoiceables_hours
+msgid "Invoiceable Hours"
+msgstr "Invoiceable Hours"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_reports_base_filter_invoice_id
+msgid "Invoices"
+msgstr "Facturas"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_project_task_is_layer
+msgid "Is Layer"
+msgstr "Is Layer"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_project_task_is_layer
+#: model:ir.ui.view,arch_db:pima.view_task_search_form
+msgid "Is Layer?"
+msgstr "Is Layer?"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_reports_base_filter_issue_id
+msgid "Issues"
+msgstr "Issues"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_account_analytic_line_to_invoice
+msgid "It allows to set the discount while making invoice, keep empty if the activities should not be invoiced."
+msgstr "It allows to set the discount while making invoice, keep empty if the activities should not be invoiced."
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_hr_timesheet_reports_base_comment_invoices
+msgid "It will appear just above list of invoices."
+msgstr "It will appear just above list of invoices."
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_hr_timesheet_reports_base_comment_issues
+msgid "It will appear just above the resumed issues."
+msgstr "It will appear just above the resumed issues."
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_hr_timesheet_reports_base_ci2html
+#: model:ir.model.fields,help:pima.field_hr_timesheet_reports_base_ciss2html
+#: model:ir.model.fields,help:pima.field_hr_timesheet_reports_base_comment_timesheet
+#: model:ir.model.fields,help:pima.field_hr_timesheet_reports_base_cts2html
+msgid "It will appear just above the resumed timesheets."
+msgstr "It will appear just above the resumed timesheets."
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_project_task_estimation_points
+msgid "Just to give another value to criterias and User Stories. With it you can set an order and a value in terms of effort"
+msgstr "Just to give another value to criterias and User Stories. With it you can set an order and a value in terms of effort"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_project_project_label_acronymous
+msgid "Label Acronymous"
+msgstr "Label Acronymous"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_project_project_label_acronymous_subtasks
+msgid "Label Acronymous Subtasks"
+msgstr "Label Acronymous Subtasks"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_project_project_label_subtasks
+#: model:ir.model.fields,field_description:pima.field_project_task_label_subtasks
+msgid "Label Subtasks"
+msgstr "Label Subtasks"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_hr_timesheet_invoice_factor_customer_name
+msgid "Label for the customer"
+msgstr "Label for the customer"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_employee_user_wizard___last_update
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_invoice_factor___last_update
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_reports_base___last_update
+#: model:ir.model.fields,field_description:pima.field_project_task_estimation___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_employee_user_wizard_write_uid
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_invoice_factor_write_uid
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_reports_base_write_uid
+#: model:ir.model.fields,field_description:pima.field_project_task_estimation_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_employee_user_wizard_write_date
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_invoice_factor_write_date
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_reports_base_write_date
+#: model:ir.model.fields,field_description:pima.field_project_task_estimation_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_project_task_layer_id
+#: model:ir.ui.view,arch_db:pima.view_task_search_form
+msgid "Layer"
+msgstr "Layer"
+
+#. module: pima
+#: model:ir.actions.act_window,name:pima.create_employee_user_wizard
+msgid "Link User from Employee"
+msgstr "Link User from Employee"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.employee_link_user_form
+msgid "Link User/Assign Group"
+msgstr "Link User/Assign Group"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.employee_link_user_form
+msgid "Link user/Assign group"
+msgstr "Link user/Assign group"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_project_task_list_id
+#: model:ir.ui.view,arch_db:pima.view_task_search_form
+msgid "List"
+msgstr "List"
+
+#. module: pima
+#: model:crm.stage,name:pima.lost
+msgid "Lost"
+msgstr "Lost"
+
+#. module: pima
+#: model:project.task.estimation,name:pima.estimation_8
+msgid "Medium"
+msgstr "Medio"
+
+#. module: pima
+#: model:project.task.estimation,name:pima.estimation_13
+msgid "Medium to hard"
+msgstr "Medium to hard"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_hr_timesheet_reports_base_state
+msgid "Message sent already to customer (it will block edition)"
+msgstr "Message sent already to customer (it will block edition)"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_invoice_factor_customer_name
+#: model:ir.model.fields,field_description:pima.field_project_task_estimation_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: pima
+#: model:crm.stage,name:pima.first_meeting
+msgid "Negotiation"
+msgstr "Negotiation"
+
+#. module: pima
+#: model:hr_timesheet_invoice.factor,name:pima.timesheet_invoice_factor7
+msgid "No (0%)"
+msgstr "No (0%)"
+
+#. module: pima
+#: model:project.task.estimation,name:pima.estimation_0
+msgid "Not Considered"
+msgstr "No considerado"
+
+#. module: pima
+#: model:project.task.estimation,name:pima.estimation_20
+msgid "Not clear enought"
+msgstr "No lo suficientemente claro"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.project_task_form_ticket
+msgid ""
+"On this place please set all the features that\n"
+"                                        explicitlly are outside (inside of the scope are the\n"
+"                                        acceptability criteria), Thisng that you considere are\n"
+"                                        part of other user story, and you will not or will\n"
+"                                        considere as part of this Story and need to be declared\n"
+"                                        explicitaly. It is important to set the scope and not\n"
+"                                        end doing things that needs to be part of other\n"
+"                                        Story or the end user is not complete agreed with it\n"
+"                                        and can be easily mixed."
+msgstr ""
+"On this place please set all the features that\n"
+"                                        explicitlly are outside (inside of the scope are the\n"
+"                                        acceptability criteria), Thisng that you considere are\n"
+"                                        part of other user story, and you will not or will\n"
+"                                        considere as part of this Story and need to be declared\n"
+"                                        explicitaly. It is important to set the scope and not\n"
+"                                        end doing things that needs to be part of other\n"
+"                                        Story or the end user is not complete agreed with it\n"
+"                                        and can be easily mixed."
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.project_task_form_ticket
+msgid ""
+"One time you finish the story, here you need to say\n"
+"                                        considerations, learned lessons, things that you think\n"
+"                                        are important to know before implement, oportunities to\n"
+"                                        improve in the future and so on.\n"
+"                                        Some set of information can be great here are link to\n"
+"                                        manuals, videos, bugs information and some other\n"
+"                                        external things that you think are important."
+msgstr ""
+"One time you finish the story, here you need to say\n"
+"                                        considerations, learned lessons, things that you think\n"
+"                                        are important to know before implement, oportunities to\n"
+"                                        improve in the future and so on.\n"
+"                                        Some set of information can be great here are link to\n"
+"                                        manuals, videos, bugs information and some other\n"
+"                                        external things that you think are important."
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_project_task_owner_id
+msgid "Owner"
+msgstr "Propietario"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_hr_timesheet_reports_base_user_id
+msgid "Owner of the report, generally the person that create it."
+msgstr "Owner of the report, generally the person that create it."
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_crossovered_budget_cost_share
+msgid "Percentage that this budget represent of the total Employee costs."
+msgstr "Percentage that this budget represent of the total Employee costs."
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.crossovered_budget_view_kanban
+msgid "Planned"
+msgstr "Planificado"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_crossovered_budget_planned_amount
+msgid "Planned Amount"
+msgstr "Importe Planificado"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_crossovered_budget_planned_amount
+msgid "Planned Amount for this Budget"
+msgstr "Planned Amount for this Budget"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_crossovered_budget_planned_expense
+msgid "Planned Expense"
+msgstr "Planned Expense"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_crossovered_budget_planned_income
+msgid "Planned Income"
+msgstr "Planned Income"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.project_task_product_id_form
+msgid "Please, Approve this User Story to start to work with it take care about if you are not the Owner of this User Story you will not be able to approve it."
+msgstr "Please, Approve this User Story to start to work with it take care about if you are not the Owner of this User Story you will not be able to approve it."
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_project_task_estimation_points
+msgid "Points"
+msgstr "Puntos"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.crossovered_budget_view_kanban
+msgid "Practical"
+msgstr "Práctico"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_crossovered_budget_practical_amount
+msgid "Practical Amount"
+msgstr "Importe Real"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_crossovered_budget_practical_amount
+msgid "Practical Amount for this Budget"
+msgstr "Practical Amount for this Budget"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_crossovered_budget_practical_expense
+msgid "Practical Expense"
+msgstr "Practical Expense"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_crossovered_budget_practical_income
+msgid "Practical Income"
+msgstr "Practical Income"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_project_task_product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_reports_base_product_id
+msgid "Product to Compute Totals"
+msgstr "Productos para calcular totales"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_reports_base_prod_cons_ids
+msgid "Products for Consultancy"
+msgstr "Productos para consultoría"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_reports_base_prod_ent_ids
+msgid "Products for Enterprises"
+msgstr "Productos para empresas"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_reports_base_prod_train_ids
+msgid "Products for Training"
+msgstr "Productos para entrenamiento"
+
+#. module: pima
+#: model:ir.model,name:pima.model_project_project
+msgid "Project"
+msgstr "Proyecto"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_sale_order_project_description
+#: model:ir.ui.view,arch_db:pima.view_order_form
+msgid "Project Description"
+msgstr "Descripción del Proyecto"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_sale_order_project_product_id
+msgid "Project Product"
+msgstr "Producto General"
+
+#. module: pima
+#: model:ir.model,name:pima.model_sale_order
+msgid "Quotation"
+msgstr "Presupuesto"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_crossovered_budget_rate_usd
+msgid "Rate Usd"
+msgstr "Tasa Usd"
+
+#. module: pima
+#: code:addons/pima/models/hr_timesheet_reports.py:100
+#, python-format
+msgid "Rate between currencies can not be 0"
+msgstr "Tasa entre monedas no puede ser 0"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_helpdesk_ticket_task_id
+msgid "Related task where the timesheet of this ticket will be loaded"
+msgstr "Related task where the timesheet of this ticket will be loaded"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.project_task_form_ticket
+msgid "Remember, when you ask for review this Acceptance criteria you should say where and How it must be d ne"
+msgstr "Remember, when you ask for review this Acceptance criteria you should say where and How it must be d ne"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.project_task_form_ticket
+msgid "Remember, when you ask for review this Acceptance criteria you should say where and How it must be done"
+msgstr "Remember, when you ask for review this Acceptance criteria you should say where and How it must be done"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_reports_base_name
+msgid "Report Title"
+msgstr "Report Title"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_reports_base_user_id
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: pima
+#: model:ir.model,name:pima.model_sale_advance_payment_inv
+msgid "Sales Advance Payment Invoice"
+msgstr "Ventas. Anticipo pago factura"
+
+#. module: pima
+#: model:ir.model,name:pima.model_crm_team
+msgid "Sales Channel"
+msgstr "Canal de ventas"
+
+#. module: pima
+#: model:ir.model,name:pima.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de pedido de venta"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.project_task_form_ticket
+msgid "Scenario"
+msgstr "Scenario"
+
+#. module: pima
+#: selection:hr.timesheet.reports.base,state:0
+msgid "Sent"
+msgstr "Sent"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.crossovered_budget_view_kanban
+msgid "Set Cover Image"
+msgstr "Establecer imagen de portada"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_hr_timesheet_reports_base_filter_issue_id
+msgid "Set the filter for issues TIP = go to issues and look for  the filter that adjust to your needs of issues to be shown."
+msgstr "Set the filter for issues TIP = go to issues and look for  the filter that adjust to your needs of issues to be shown."
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_reports_base_show_details
+msgid "Show Detailed Timesheets"
+msgstr "Show Detailed Timesheets"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_hr_timesheet_reports_base_state
+msgid "Status"
+msgstr "Estado"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_crossovered_budget_hours_informed
+msgid "Summarize Informed Hours on employees which are cost."
+msgstr "Summarize Informed Hours on employees which are cost."
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_crossovered_budget_hours_invoice
+msgid "Summarize Invoiceable Hours on employees which are cost."
+msgstr "Summarize Invoiceable Hours on employees which are cost."
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_crossovered_budget_theoretical_timesheet
+msgid "Summarize theoretical timesheet on employees which are cost."
+msgstr "Summarize theoretical timesheet on employees which are cost."
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_helpdesk_team_project_id
+#: model:ir.model.fields,field_description:pima.field_helpdesk_ticket_project_id
+msgid "Support Project"
+msgstr "Proyecto de soporte"
+
+#. module: pima
+#: model:ir.model,name:pima.model_project_task
+#: model:ir.model.fields,field_description:pima.field_helpdesk_ticket_task_id
+msgid "Task"
+msgstr "Tarea"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.project_task_form_ticket
+msgid "Technical Conclusions"
+msgstr "Technical Conclusions"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.report_saleorder_document
+msgid "Terms and Conditions"
+msgstr "Términos y condiciones"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_crossovered_budget_rate_usd
+msgid "The conversion analysis is never the real one, then with this we can have an amount in th company currency and then properly exchange to usd using this factor as a reference always then with the execution we can see what was the real amount in usd."
+msgstr "The conversion analysis is never the real one, then with this we can have an amount in th company currency and then properly exchange to usd using this factor as a reference always then with the execution we can see what was the real amount in usd."
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_helpdesk_team_project_id
+#: model:ir.model.fields,help:pima.field_helpdesk_ticket_project_id
+msgid "The project where the task related to the tickets will be created"
+msgstr "The project where the task related to the tickets will be created"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.crossovered_budget_view_kanban
+msgid "Theoretical"
+msgstr "Theoretical"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_crossovered_budget_theoretical_amount
+msgid "Theoretical Amount"
+msgstr "Importe teórico"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_crossovered_budget_theoretical_amount
+msgid "Theoretical Amount for this Budget"
+msgstr "Theoretical Amount for this Budget"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_crossovered_budget_theoretical_expense
+msgid "Theoretical Expense"
+msgstr "Theoretical Expense"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_crossovered_budget_theoretical_income
+msgid "Theoretical Income"
+msgstr "Theoretical Income"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_crossovered_budget_theoretical_timesheet
+msgid "Theoretical Timesheet"
+msgstr "Theoretical Timesheet"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_hr_timesheet_reports_base_currency_id
+#: model:ir.model.fields,help:pima.field_hr_timesheet_reports_base_product_id
+msgid "This product will be used to compute totals"
+msgstr "This product will be used to compute totals"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_sale_order_project_product_id
+msgid "This product will be used to show a general description of the order. All documents(Invoice, Reports) created from this order will show only this product and the total of the order"
+msgstr "Este producto será usado para mostrar una descripción general de la orden. Todos los documentos(Factura, Reportes) creados desde esta orden mostraran solamente este product con el total de la orden"
+
+#. module: pima
+#: code:addons/pima/models/sale.py:63
+#, python-format
+msgid "This task will be blocked until the sale order has been paid"
+msgstr "This task will be blocked until the sale order has been paid"
+
+#. module: pima
+#: model:ir.model,name:pima.model_helpdesk_ticket
+#: model:ir.model.fields,field_description:pima.field_project_task_ticket_id
+msgid "Ticket"
+msgstr "Tiquet"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.project_task_form_ticket
+msgid "Timesheets"
+msgstr "Partes de horas"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.project_task_form_ticket
+msgid "Title"
+msgstr "Título"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_account_analytic_line_invoiceables_hours
+msgid "Total hours to charge"
+msgstr "Total hours to charge"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.account_analytic_line_invoiceable_lines
+#: model:ir.ui.view,arch_db:pima.account_analytic_line_invoiceable_lines2
+msgid "Total invoiceable time"
+msgstr "Total invoiceable time"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_crossovered_budget_use_cost
+msgid "Use Cost"
+msgstr "Use Cost"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_crossovered_budget_use_cost
+msgid "Used to compute costs on employees (Dates matter to be used)"
+msgstr "Used to compute costs on employees (Dates matter to be used)"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.project_task_form_ticket
+msgid "User Story"
+msgstr "User Story"
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_project_task_owner_id
+msgid "User Story's Owner, generally the person which asked to develop this feature on customer side"
+msgstr "User Story's Owner, generally the person which asked to develop this feature on customer side"
+
+#. module: pima
+#: code:addons/pima/wizard/employee_user.py:35
+#, python-format
+msgid "User not created. Doesn't exists an user with same email address."
+msgstr "User not created. Doesn't exists an user with same email address."
+
+#. module: pima
+#: model:ir.model.fields,help:pima.field_project_task_approving_id
+msgid "User which says this User Story must/can be done"
+msgstr "User which says this User Story must/can be done"
+
+#. module: pima
+#: model:project.task.estimation,name:pima.estimation_1_2
+msgid "Very Easy"
+msgstr "Very Easy"
+
+#. module: pima
+#: model:crm.stage,name:pima.first_contact
+msgid "Waiting Information"
+msgstr "Waiting Information"
+
+#. module: pima
+#: model:ir.model.fields,field_description:pima.field_res_company_website_address_ids
+msgid "Web Contacts"
+msgstr "Contactos web"
+
+#. module: pima
+#: model:ir.ui.menu,name:pima.menu_website_menu
+msgid "Website Menus"
+msgstr "Menus del sitio web"
+
+#. module: pima
+#: model:product.uom,name:pima.product_uom_week
+msgid "Week(s)"
+msgstr "Week(s)"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.project_task_form_ticket
+msgid "Who fill this?"
+msgstr "Who fill this?"
+
+#. module: pima
+#: model:hr_timesheet_invoice.factor,name:pima.timesheet_invoice_factor1
+msgid "Yes (100%)"
+msgstr "Si (100%)"
+
+#. module: pima
+#: model:ir.actions.act_window,help:pima.act_pima_timesheet_line_by_task
+msgid ""
+"You can register and track your workings hours by project every\n"
+"                    day. Every time spent on a project will become a cost and can be re-invoiced to\n"
+"                    customers if required."
+msgstr ""
+"You can register and track your workings hours by project every\n"
+"                    day. Every time spent on a project will become a cost and can be re-invoiced to\n"
+"                    customers if required."
+
+#. module: pima
+#: model:ir.model,name:pima.model_employee_user_wizard
+msgid "employee_user.wizard"
+msgstr "employee_user.wizard"
+
+#. module: pima
+#: model:ir.model,name:pima.model_hr_timesheet_reports_base
+msgid "hr.timesheet.reports.base"
+msgstr "hr.timesheet.reports.base"
+
+#. module: pima
+#: model:ir.ui.view,arch_db:pima.employee_link_user_form
+msgid "or"
+msgstr "o"

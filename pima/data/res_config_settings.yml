@@ -1,0 +1,34 @@
+-
+  Configuration Settings
+-
+  !record {model: res.config.settings, id: config_settings}:
+    {
+        # General Settings
+        'auth_signup_uninvited': 'b2c',
+        'alias_domain': 'production.pima-mex.com',
+        'group_multi_company': True,
+        'auth_signup_reset_password': True,
+        'auth_oauth_google_enabled': True,
+        'default_user_rights': True,
+        # Sale Settings
+        'group_use_lead': True,
+        'group_analytic_account_for_purchases': True,
+        'group_uom': True,
+        'multi_sales_price_method': 'percentage',
+        'group_warning_sale': True,
+        'group_sale_delivery_address': True,
+        'use_sale_note': True,
+        'default_invoice_policy': 'delivery',
+        'group_sale_layout': True,
+        'group_multi_currency': True,
+        'group_product_variant': True,
+        'default_lang_id': base.lang_es_MX,
+        'language_ids': [base.lang_es_MX, base.lang_en],
+        # Website Settings
+        # 'website_name': 'production.pima-mex.com',
+        'has_google_analytics_dashboard': True,
+        'default_invoice_policy': 'delivery'
+    }
+-
+  !python {model: res.config.settings}: |
+    self.browse(ref('config_settings')).execute()

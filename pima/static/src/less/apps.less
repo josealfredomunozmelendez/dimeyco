@@ -1,0 +1,212 @@
+/* On premise apps */
+
+.tiles-section {
+    position: relative;
+    .o_switch {
+        .o-flex-display();
+        .o-align-items(center);
+        font-weight: normal;
+        height: 1.5em;
+        cursor: pointer;
+
+        > input {
+            display: none;
+
+            + span {
+                background: #bababa;
+                border-radius: 0.4em;
+                height: 1em;
+                width: 2.5em;
+                margin-right: 0.5em;
+                display: inline-block;
+                .transition(all 0.3s @o-we-md-ease);
+                &:after {
+                    content: "";
+                    background: #fafafa;
+                    display: block;
+                    width: 1.5em;
+                    height: 1.5em;
+                    border-radius: 100em;
+                    margin-top: -0.3em;
+                    margin-left: -0.1em;
+                    .transition(all 0.3s @o-we-md-ease);
+                    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+                }
+            }
+
+            &:checked + span {
+                background-color: rgb(142, 224, 212);
+                background-color: transparentize(@odoo-brand-optional, 0.5);
+                &:after {
+                    background-color: @odoo-brand-optional;
+                    margin-left: 1.1em;
+                }
+            }
+        }
+        &:hover > input + span:after {
+            background-color: mix(@odoo-brand-optional, #fafafa);
+        }
+    }
+    .o_switch {
+        padding: 10px 0px 0px 15px;
+        input + span:after {
+            background: @quick_yellow;
+        }
+        input:checked + span:after {
+            background-color: @accent;
+        }
+        input + span {
+            background: @quick_yellow * 0.85;
+        }
+        input:checked + span {
+            background-color: @accent * 0.85;
+        }
+    }
+    hr {
+        border-top: 1px solid @gray-500;
+        display: block;
+        clear: both;
+    }
+    .total {
+        min-height: 40px;
+        min-width: 100%;
+    }
+    .grand-total {
+        padding-top: 15px !important;
+        min-width: 100%;
+        min-height: 72px;
+    }
+    .content-ruler {
+        max-width: 80%;
+    }
+    .bordered-div {
+        background-color: @pima-white;
+        padding-left: 0px;
+        padding-right: 0px;
+        border-radius: 0px;
+    }
+    .app-check {
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
+    }
+    .app-clip {
+        position: absolute;
+        left: 5px;
+        bottom: 5px;
+    }
+    .img-app {
+        max-height: 56px;
+    }
+    .img-tray {
+        max-height: 24px;
+    }
+    .app-name, .app-price {
+        position: relative;
+        bottom: -1px;
+        background-color: @pima-white;
+    }
+    .dotted {
+        padding-left: 0px;
+        padding-right: 28px;
+        &:before {
+          content : "";
+          position: absolute;
+          left    : 20px;
+          bottom  : 0;
+          height  : 1px;
+          width   : 70%;  /* or 100px */
+          border-bottom:2px dotted @div-gray;
+        }
+    }
+    h3 {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 1.5;
+        margin-top: 5px;
+        margin-bottom: 2px;
+    }
+    h4 {
+        font-size: 16px;
+    }
+    .btn-billing {
+        color: @link-gray;
+        background-color: @pima-white;
+        border-color: @disabling_grey;
+        min-height: 40px;
+        padding-top: 10px;
+    }
+    .btn-billing:focus,
+    .btn-billing.focus {
+      color: @pima-white;
+      background-color: @quick_yellow;
+      border-color:  @quick_yellow;
+    }
+    .btn-billing:hover {
+      color: @pima-white;
+      background-color: @quick_yellow;
+      border-color: @quick_yellow;
+    }
+    .btn-billing:active,
+    .btn-billing.active,
+    .open > .dropdown-toggle.btn-billing {
+      color: @pima-white;
+      background-color: @quick_yellow;
+      border-color: @quick_yellow;
+    }
+    .btn-currency {
+        padding: 0px;
+        border-radius: 0px;
+        color: @link-gray;
+        background-color: @pima-white;
+        border-color: @div-gray;
+        max-height: 22px;
+        top: 9px;
+    }
+    .btn-currency:focus,
+    .btn-currency.focus {
+      color: @pima-white;
+      background-color: @quick_yellow;
+      border-color:  @quick_yellow;
+    }
+    .btn-currency:hover {
+      color: @pima-white;
+      background-color: @quick_yellow;
+      border-color: @quick_yellow;
+    }
+    .btn-currency:active,
+    .btn-currency.active,
+    .open > .dropdown-toggle.btn-currency {
+      top: 0px;
+      color: @pima-white;
+      background-color: @quick_yellow;
+      border-color: @quick_yellow;
+      min-height: 28px;
+      border-radius: 3px 3px 0px 0px;
+      padding-top: 4px;
+    }
+    .currency-buttons {
+        right: -2px;
+    }
+    .apps-tray {
+        top: -12px;
+    }
+    label.tile {
+        display: block;
+    }
+}
+/*FAQ FOOTER*/
+#apps-faq {
+    top: -104px;
+    position: relative;
+    .panel-heading {
+        background-color: unset;
+        margin-bottom: 0px;
+    }
+    .panel {
+        border-radius: 0px;
+    }
+    .panel-body {
+        padding-left: 35px;
+    }
+}

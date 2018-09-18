@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!--  Material Requisition -->
+    <record id ="material_requisition_action" model="ir.actions.act_window">
+        <field name="name">Requisicion de Material</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">stock_inventory.material_requisition</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_type">form</field>
+    </record>
+    
+    <record id="material_requisition_only_form" model="ir.ui.view">
+        <field name="name">Formulario Requisicion de Material</field>
+        <field name="model">stock_inventory.material_requisition</field>
+        <field name="arch" type="xml">
+            <form string="Requisition">
+                <header>
+                    <button string="VALIDAR"  
+                        attrs="{'invisible': ['|', ('status', '=', 'done'), ('status','=','canceled')]}"
+                        groups="stock.group_stock_manager" type="object" class="btn btn-primary" name="dispatch_items_button_action" confirm="Estas seguro de hacer esto?"/>
+                </header>
+                
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    
+                    <group>
+                        <field name="date" readonly='True' />
+                        <field name="employee_id" attrs="{'readonly': [('status', '!=', 'open' )]}"  />
+                        <field name="partner_id" attrs="{'readonly': [('status', '!=', 'open' )]}"  />
+                        <field name="promise_return_date"/>
+                        <field name="service_name"/>
+                        <field name="status"/>
+                    </group>
+
+                    <notebook>
+                        <page string="Materiales" groups="stock.group_stock_manager">
+                            <field name="requisition_line_ids"  attrs="{'readonly': ['|', ('status', '=', 'done'), ('status','=','canceled')]}">
+                                <tree editable="bottom"   >
+                                    <field name="product_id"  />
+                                    <field name="quantity"   />
+                                    <field name="uom" attrs="{'readonly': True}" />
+                                    <field name="weight" />
+                                    <field name="analytic_account" />
+                                    <field name="total_weight" attrs="{'readonly': True}" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Salida" groups="stock.group_stock_manager">
+                            <field name="dispatch_line_ids"  attrs="{'readonly': ['|', ('status', '=', 'done'), ('status','=','canceled')]}">
+                                <tree editable="bottom"   >
+                                    <field name="product_id" attrs="{'readonly': True}" />
+                                    <field name="quantity" string="Cantidad Solicitada"  attrs="{'readonly': True}" />
+                                    <field name="total_weight" attrs="{'readonly': True}" />
+                                    <field name="quantity_dispatch" />
+                                    <field name="quantity_dispatched" attrs="{'readonly': True}"  />
+                                    <field name="dispatch_date" attrs="{'readonly': True}" />
+                                    <field name="status" attrs="{'readonly': True}"  />
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Entrada" groups="stock.group_stock_manager">
+                            <field name="return_line_ids" attrs="{'readonly': ['|', ('status', '=', 'done'), ('status','=','canceled')]}">
+                                <tree editable="bottom">
+                                    <field name="product_id"  attrs="{'readonly': True}" />
+                                    <field name="quantity_dispatched"  attrs="{'readonly': True}"/>
+                                    <field name="uom"  attrs="{'readonly': True}" />
+                                    <field name="quantity_return" />
+                                    <field name="quantity_returned"  attrs="{'readonly': True}"/>
+                                    <field name="return_date" attrs="{'readonly': True}"/>
+                                    <field name="status"  attrs="{'readonly': True}"/>
+                                    <button name="return_item" 
+                                        attrs="{'invisible': [('parent.status', '=', 'done')]}"
+                                        string="Regresar" type="object" confirm="Estas seguro de hacer esto?"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <record model="ir.ui.view" id="material_requisition_tree_view">
+        <field name="name">Requisicion de Inventario</field>
+        <field name="model">stock_inventory.material_requisition</field>
+        <field name="type">tree</field>
+        
+        <field name="arch" type="xml">
+            <tree>
+               <field name="name"></field>
+               <field name="date"></field>
+               <field name="partner_id"></field>
+               <field name="service_name"></field>
+               <field name="total_weight"></field>
+               <field name="total_items"></field>
+               <field name="status" />
+            </tree>
+        </field>
+    </record> 
+    
+    <menuitem id="menu_inventory_requisition" 
+        name="Requisiciones" 
+        parent="stock.menu_stock_root"  />
+    
+    <menuitem id="menu_inventory_requisition_material" 
+        name="Requisicion de material" 
+        parent="menu_inventory_requisition" 
+        action="material_requisition_action" />
+        
+</odoo>

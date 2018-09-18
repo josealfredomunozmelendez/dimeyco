@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="base.main_company" model="res.company">
+        <field name="name">Procesos Industriales de Manufactura Automatizadas, S.A. de C.V.</field>
+        <field name="logo" type="base64" file="pima/static/src/img/icon.png"/>
+        <field name="website">http://pima-mex.com/</field>
+        <field name="phone">+52 (656) 170.35.32</field>
+        <field name="email">info@pima-mex.com</field>
+    </record>
+    <record id="base.main_partner" model="res.partner">
+        <field name="vat">PIM010216QW1</field>
+        <field name="property_account_position_id" search="[('name', '=', '601 - General de Ley Personas Morales')]"/>
+        <field name="street_name">Alberto Carrera Torres</field>
+        <field name="street2"></field>
+        <field name="street_number">7909</field>
+        <field name="street_number2"></field>
+        <field name="zip">32679</field>
+        <field name="city">Ciudad Juárez</field>
+        <field name="l10n_mx_edi_colony">Parque Industrial Los Aztecas</field>
+        <field name="state_id" ref="base.state_mx_chih"/>
+        <field name="country_id" ref="base.mx"/>
+    </record>
+</odoo>

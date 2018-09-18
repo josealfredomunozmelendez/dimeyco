@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_res_company_form_inh_payslip_l10n_mx">
+        <field name="name">view.res.company.form.inh.payslip.l10n_mx</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="model">res.company</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_registry']" position="inside">
+                <field name="l10n_mx_edi_curp"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

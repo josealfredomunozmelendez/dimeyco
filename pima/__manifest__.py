@@ -40,7 +40,7 @@
 
         # Website modules
         "login",
-        "web_search_with_and",
+        #"web_search_with_and",
 
         # Sales
         "mrp_analytic",
